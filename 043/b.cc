@@ -1,17 +1,25 @@
 #include <iostream>
+#include <string>
 #include <cmath>
+#include <vector>
 
 int main() {
-	char ch;
-        char c[232];
-        char top; 
+    std::string s;
+    std::vector<char> v;
 
-	while(std::cin>>ch) {
-		if(ch=='B' && top) top--;
-		if(ch!='B') c[top++]=ch;
-	}
-
-	for(int i=0;i<top;++i){
-             std::cout << c[i] << std::endl;
+    std::cin >> s;
+    
+    for(int i=0;i<s.size();i++){
+        if(s[i] == 'B'){
+            if(v.size()) v.pop_back();
+        } else {
+            v.push_back(s[i]);
         }
+    }
+
+    for(int i=0;i<v.size();i++){
+         std::cout << v[i];
+    }
+
+    std::cout << std::endl;
 }
