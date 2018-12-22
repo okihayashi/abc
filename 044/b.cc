@@ -9,14 +9,12 @@ int main(){
     std::cin >> s; 
 
     for(int i=0;i<=s.length();i++){
-        //std::cout << s[i] << std::endl; 
         count[s[i]] += 1;
     }
 
-    for(int i=0;i<=26;i++){
+    for(int i=0;i<=s.length();i++){
         if(s[i]){
             if(count[s[i]]%2 != 0) flag = 1;
-            break;
         }
     }
 
